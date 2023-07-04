@@ -46,6 +46,8 @@ const etàInputElement = document.querySelector("[name='etàpasseggero']");
 
 const btnGenera = document.querySelector(".btn-genera");
 
+// CLICK
+
 btnGenera.addEventListener("click", function() {
     console.log("click");
 
@@ -88,10 +90,16 @@ btnGenera.addEventListener("click", function() {
 
     const finalPrice = (prezzoBiglietto - sconto).toFixed(2);
     console.log("Prezzo del biglietto: " + finalPrice + " Euro");
+
+// NON VA 
+
+    if (kmInputElement.value <= 0) {
+    alert("Inserire numero di chilometri maggiori di 0");
+    } 
+
+    // __________________________
+
 });
 
-// if (kmInputElement <= 0) {
-//     alert("Inserire numero di chilometri maggiori di 0");
-//   } 
 
 
