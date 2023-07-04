@@ -78,7 +78,7 @@ btnGenera.addEventListener("click", function() {
         sconto = 0;
         console.log("L'utente non ha diritto ad alcuno sconto");
         document.getElementById("username-biglietto").innerHTML = username
-        document.getElementById("costo-finale-biglietto").innerHTML = noSconto.toFixed(2)
+        document.getElementById("costo-finale-biglietto").innerHTML = noSconto
 
     } else {
         sconto = (prezzoBiglietto * 40) / 100;
@@ -100,6 +100,3 @@ btnGenera.addEventListener("click", function() {
     // __________________________
 
 });
-
-
-
