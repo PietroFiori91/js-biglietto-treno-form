@@ -50,6 +50,8 @@ btnGenera.addEventListener("click", function() {
     console.log("click");
 
     document.getElementById("my-container").classList.toggle('d-none');
+    document.getElementById("random-carrozza").innerHTML = Math.floor(Math.random() * 10);
+    document.getElementById("random-cp").innerHTML = Math.floor(Math.random() * 100000);
 
     const username = usernameInputElement.value;
     const km = parseInt(kmInputElement.value);
@@ -60,23 +62,28 @@ btnGenera.addEventListener("click", function() {
     const noSconto = prezzoBiglietto;
     const sconto40 = (prezzoBiglietto * 40) / 100;
 
+    
+
     let sconto=0
 
     if (età < 18) {
         sconto = (prezzoBiglietto * 20) / 100;
         console.log("L'utente ha diritto a " + sconto.toFixed(2) + " Euro di sconto");
         document.getElementById("username-biglietto").innerHTML = username
-        document.getElementById("costo-finale-biglietto").innerHTML = sconto20
+        document.getElementById("costo-finale-biglietto").innerHTML = sconto20.toFixed(2)
+        
     } else if (età >= 18 && età < 65) {
         sconto = 0;
         console.log("L'utente non ha diritto ad alcuno sconto");
         document.getElementById("username-biglietto").innerHTML = username
-        document.getElementById("costo-finale-biglietto").innerHTML = noSconto
+        document.getElementById("costo-finale-biglietto").innerHTML = noSconto.toFixed(2)
+
     } else {
         sconto = (prezzoBiglietto * 40) / 100;
         console.log("L'utente ha diritto a " + sconto.toFixed(2) + " Euro di sconto");
         document.getElementById("username-biglietto").innerHTML = username
-        document.getElementById("costo-finale-biglietto").innerHTML = sconto40
+        document.getElementById("costo-finale-biglietto").innerHTML = sconto40.toFixed(2)
+        
     }
 
     const finalPrice = (prezzoBiglietto - sconto).toFixed(2);
@@ -86,4 +93,5 @@ btnGenera.addEventListener("click", function() {
 // if (kmInputElement <= 0) {
 //     alert("Inserire numero di chilometri maggiori di 0");
 //   } 
+
 
