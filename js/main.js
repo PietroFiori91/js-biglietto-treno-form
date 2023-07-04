@@ -49,6 +49,8 @@ const btnGenera = document.querySelector(".btn-genera");
 btnGenera.addEventListener("click", function() {
     console.log("click");
 
+    document.getElementById("my-container").classList.toggle('d-none');
+
     const username = usernameInputElement.value;
     const km = parseInt(kmInputElement.value);
     const età = parseInt(etàInputElement.value);
@@ -80,3 +82,8 @@ btnGenera.addEventListener("click", function() {
     const finalPrice = (prezzoBiglietto - sconto).toFixed(2);
     console.log("Prezzo del biglietto: " + finalPrice + " Euro");
 });
+
+// if (kmInputElement <= 0) {
+//     alert("Inserire numero di chilometri maggiori di 0");
+//   } 
+
